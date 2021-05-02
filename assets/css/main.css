@@ -1,0 +1,122 @@
+@import "./basic.css";
+@import "./helpers.css";
+@import "./mobile.css";
+@import "./desktop.css" (min-width: 740px);
+
+.loader {
+  width: 80vh;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+.filter-display {
+  background-color: rgb(33 45 35);
+  width: 100%;
+  color: #d6afaf;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+/* .book-filter {
+  display: grid;
+  grid-template-columns: repeat(7, auto);
+  gap: 0 10px;
+  width: 90%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+} */
+
+.card {
+  position: relative;
+  box-shadow: 0 0 8px rgba(128, 128, 128, 0.63);
+  padding-bottom: 15px;
+  max-width: 250px;
+  max-height: 450px;
+  cursor: pointer;
+  background-color: #ffffff;
+}
+
+.card-img {
+  position: relative;
+}
+
+.card-img.link-opc {
+  background-color: rgba(128, 128, 128, 0.63);
+}
+
+img {
+  max-width: 100%;
+}
+
+.cheap {
+  color: rgb(8, 182, 8);
+}
+
+.over-priced {
+  color: red;
+}
+
+.read-btn {
+  cursor: pointer;
+  text-decoration: underline;
+  color: lightblue;
+}
+
+.read-btn:hover {
+  color: blue;
+}
+
+/*////////////////////////*/
+
+.modal-screen {
+  position: fixed;
+  width: 100vw;
+  height: 100%;
+  margin: 0;
+  background-color: rgba(128, 128, 128, 0.63);
+  z-index: 1;
+  pointer-events: none;
+  display: none;
+}
+
+.main.modal-open .modal-screen {
+  pointer-events: all;
+  display: block;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: fit-content;
+  background-color: rgb(255, 254, 254);
+  z-index: 2;
+  padding: 20px;
+  box-shadow: 0 0 10px 0;
+}
+
+.authors-names > *:not(:last-child)::after {
+  content: ", ";
+}
+
+.book-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  gap: 10px 0;
+  height: fit-content;
+  justify-items: center;
+}
+
+.book-container img {
+  max-width: 150px;
+}

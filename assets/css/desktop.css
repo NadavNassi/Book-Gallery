@@ -1,0 +1,7 @@
+.books-list {
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
+  }
+
+  .book-filter {
+  grid-template-columns: repeat(7, auto);
+}
