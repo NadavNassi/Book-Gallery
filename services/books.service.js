@@ -12,7 +12,9 @@ export const booksService = {
     getBookById,
     saveReview,
     removeReview,
-    saveGoogleBook
+    saveGoogleBook,
+    getNextBookId,
+    getPrevBookId
 }
 _loadBooks()
 
@@ -42,6 +44,20 @@ function query(filterBy) {
     return Promise.resolve(gBooks)
 }
 
+function getPrevBookId(bookId){
+    const bookIdx = gBooks.findIndex(book => book.id === bookId)
+    let prevBookIdx = bookIdx - 1
+    prevBookIdx = prevBookIdx < 0 ? gBooks.length - 1 : prevBookIdx
+    return gBooks[prevBookIdx].id
+}
+
+function getNextBookId(bookId) {
+    const bookIdx = gBooks.findIndex(car => car.id === bookId)
+    var nextBookIdx = bookIdx + 1
+    nextBookIdx = nextBookIdx === gBooks.length ? 0 : nextBookIdx
+    return gBooks[nextBookIdx].id
+}
+
 function getBookById(bookId){
     const book = gBooks.find((book) => bookId === book.id)
     return Promise.resolve(book)
@@ -66,7 +82,7 @@ function removeReview(book, reviewId) {
 function saveGoogleBook(book){
     gBooks.push(book)
     _saveBooks()
-    return Promise.resolve
+    return Promise.resolve()
 }
 
 

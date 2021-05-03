@@ -1,4 +1,4 @@
-const { NavLink, withRouter } = ReactRouterDOM
+const { NavLink} = ReactRouterDOM
 
 export function AppHeader() {
     return(

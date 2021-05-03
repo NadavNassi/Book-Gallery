@@ -1,0 +1,13 @@
+.user-msg {
+    float: right;
+    background-color: honeydew;
+    color: #333;
+    padding: 10px;
+}
+
+.user-msg.error {
+    background-color: lightcoral;
+}
+.user-msg.success {
+    background-color: lightgreen;
+}

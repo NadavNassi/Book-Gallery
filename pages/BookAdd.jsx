@@ -3,7 +3,8 @@ const {withRouter} = ReactRouterDOM
 import {utilService} from '../services/util.service.js'
 import { ResultList } from "../cmps/ResultList.jsx";
 import { addBookService } from "../services/add.book.service.js";
-import {bookService, booksService} from '../services/books.service.js'
+import {booksService} from '../services/books.service.js'
+import {UserMsg} from '../cmps/UserMsg.jsx'
 
 class _BookAdd extends React.Component {
   state = {

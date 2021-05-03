@@ -16,6 +16,12 @@ export class BookDetails extends React.Component {
     this.loadBook();
   }
 
+  componentDidUpdate(prevProps, prevState){
+    if (prevProps.match.params.bookId !== this.props.match.params.bookId){
+      this.loadBook()
+    }
+  }
+
   loadBook = () => {
     const { bookId } = this.props.match.params;
     booksService.getBookById(bookId).then((book) => {
@@ -101,6 +107,7 @@ export class BookDetails extends React.Component {
             ))}
           </h3>
           <hr />
+          <div className="book-desc">
           <label htmlFor='bookDesc'>About this book:</label>
           <LongText
             txt={book.description}
@@ -108,6 +115,7 @@ export class BookDetails extends React.Component {
             toggleReadMore={this.toggleReadMore}
           />
           <hr />
+          </div>
           <div className='page-count'>{this.getPageCount()}</div>
           <div className='boo-age'>{this.getHowOld()}</div>
           <div className='book-categories'>
@@ -122,7 +130,7 @@ export class BookDetails extends React.Component {
           <button onClick={this.onCloseModal}>Close</button>
         </div>
         <Route component={ReviewAdd} path='/book/:bookId/add-review' />
-
+          <div>
         <div className="review-section">
           <Link to={`/book/${book.id}/add-review`}>Add review</Link>
         </div>
@@ -141,6 +149,11 @@ export class BookDetails extends React.Component {
         </div>
           )}
         </div>
+          </div>
+          <div className="nav-btns">
+            <Link to={`/book/${booksService.getPrevBookId(book.id)}`}>Previews</Link>
+            <Link to={`/book/${booksService.getNextBookId(book.id)}`}>Next</Link>
+          </div>
       </article>
     );
   }
