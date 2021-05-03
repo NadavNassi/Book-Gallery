@@ -6,4 +6,23 @@
 .sale {
     color: red;
   }
+
+  .clean-text{
+    text-decoration: none;
+    color: black;
+  }
+
+  .clean-list {
+    list-style: none;
+    padding: 0;
+    list-style-type: none;
+    margin: 0;
+}
+
+.clean-list li a{
+  text-decoration: none;
+}
   
+.active{
+  color: red;
+}
