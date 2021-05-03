@@ -11,7 +11,8 @@ export const booksService = {
     query,
     getBookById,
     saveReview,
-    removeReview
+    removeReview,
+    saveGoogleBook
 }
 _loadBooks()
 
@@ -62,5 +63,10 @@ function removeReview(book, reviewId) {
     return Promise.resolve()
 }
 
+function saveGoogleBook(book){
+    gBooks.push(book)
+    _saveBooks()
+    return Promise.resolve
+}
 
-window.gBooks = gBooks
+

@@ -18,7 +18,6 @@ export class BookApp extends React.Component {
     });
   }
 
-  
   onSetFilter = (filterBy) => {
     this.setState({ filterBy }, this.loadBooks);
   };

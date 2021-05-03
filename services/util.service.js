@@ -1,7 +1,9 @@
 'use strict'
 
 export const utilService = {
-    makeId
+    makeId,
+    debounce,
+    getRandomIntInclusive
 }
 
 function makeId(length = 5) {
@@ -12,3 +14,23 @@ function makeId(length = 5) {
     }
     return txt;
 }
+
+function debounce(func, wait) {
+    let timeout;
+  
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+  
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  };
+
+  function getRandomIntInclusive(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
+  }

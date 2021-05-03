@@ -1,0 +1,13 @@
+id,
+volumeInfo.title,
+volumeInfo.subtitle,
+volumeInfo.authors,
+new Date(volumeInfo.publishedDate).getYear(),
+volumeInfo.description,
+volumeInfo.pageCount,
+volumeInfo.categories[],
+volumeInfo.imageLinks.thumbnail,
+volumeInfo.language,
+listPrice.amount: getInt(),
+listPrice.currencyCode: random,
+listPrice.isOnSale: random
